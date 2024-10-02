@@ -44,15 +44,23 @@ function toggle(e) {
   this.closest(".has-child").classList.toggle("expand");
 }
 
-
 // slider
-const swiper = new Swiper('.swiper', {
- 
+const swiper = new Swiper(".swiper", {
   loop: true,
 
   pagination: {
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
   },
+});
 
- 
+// show hide search in mobile
+const searchButton = document.querySelector(".t-search"),
+  tClose = document.querySelector(".search-close"),
+  showClass = document.querySelector(".site");
+searchButton.addEventListener("click", function () {
+  showClass.classList.toggle("showsearch");
+});
+
+tClose.addEventListener("click", function () {
+  showClass.classList.remove("showsearch");
 });
